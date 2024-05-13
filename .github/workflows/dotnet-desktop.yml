@@ -86,11 +86,15 @@ jobs:
       
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
-      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration /p:PublishUrl="published"
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration  /p:Platform=AnyCPU /t:WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:PublishUrl="published"
       env:
         Configuration: ${{ matrix.configuration }}
     - name: List files in the repository
       working-directory: IVU-Zedas/IVU-Zedas
+      run: |
+          dir
+    - name: List files in the repository
+      working-directory: IVU-Zedas
       run: |
           dir
     - name: Upload artifact
