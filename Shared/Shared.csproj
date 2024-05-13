@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<IsPackable>true</IsPackable>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Azure.Identity" Version="1.11.0" />
+		<PackageReference Include="Azure.Messaging.ServiceBus" Version="7.17.1" />
+		<PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.5.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+		<PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.2.0" />
+		<PackageReference Include="NRedisStack" Version="0.11.0" />
+		<PackageReference Include="Azure.Storage.Blobs" Version="12.19.1" />
+		<PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="5.2.1" />
+		<PackageReference Include="System.ServiceModel.Http" Version="6.2.0" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="6.2.0" />
+	</ItemGroup>
+</Project>
