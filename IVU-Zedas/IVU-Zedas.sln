@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IVU-Zedas", "IVU-Zedas\IVU-Zedas.csproj", "{9610E20E-D979-4AB7-B8CB-C9F7A7BCB755}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "..\Shared\Shared.csproj", "{00512FB7-50DE-4E18-A5D0-84ED3EBDE804}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9610E20E-D979-4AB7-B8CB-C9F7A7BCB755}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9610E20E-D979-4AB7-B8CB-C9F7A7BCB755}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9610E20E-D979-4AB7-B8CB-C9F7A7BCB755}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9610E20E-D979-4AB7-B8CB-C9F7A7BCB755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00512FB7-50DE-4E18-A5D0-84ED3EBDE804}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00512FB7-50DE-4E18-A5D0-84ED3EBDE804}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00512FB7-50DE-4E18-A5D0-84ED3EBDE804}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00512FB7-50DE-4E18-A5D0-84ED3EBDE804}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC3D6539-CA08-4841-996D-2AAD2FCDC9FB}
+	EndGlobalSection
+EndGlobal
