@@ -89,9 +89,13 @@ jobs:
       run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration /p:PublishUrl="published"
       env:
         Configuration: ${{ matrix.configuration }}
-
+    - name: List files in the repository
+      working-directory: IVU-Zedas
+      run: |
+          dir
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
-       name: BuilfFunction
-       path: "./published"
+       name: BuildFunction
+       path: "./IVU-Zedas/published"
+
