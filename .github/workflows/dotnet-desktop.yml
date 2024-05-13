@@ -90,12 +90,12 @@ jobs:
       env:
         Configuration: ${{ matrix.configuration }}
     - name: List files in the repository
-      working-directory: IVU-Zedas
+      working-directory: IVU-Zedas/IVU-Zedas
       run: |
           dir
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
        name: BuildFunction
-       path: "./IVU-Zedas/published"
+       path: "./IVU-Zedas/IVU-Zedas/published"
 
