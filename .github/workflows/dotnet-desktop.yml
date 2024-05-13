@@ -51,7 +51,7 @@ jobs:
 
     strategy:
       matrix:
-        configuration: [Debug]
+        configuration: [Release]
 
     runs-on: windows-latest  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
@@ -81,11 +81,17 @@ jobs:
     # Execute all unit tests in the solution
     #- name: Execute unit tests
     #  run: dotnet test
-
+    #- name: Restore Packages
+    #  run: nuget restore $env:Solution_Name
+      
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
-      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration /p:PublishUrl="published"
       env:
         Configuration: ${{ matrix.configuration }}
 
-    
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+       name: BuilfFunction
+       path: "./published"
