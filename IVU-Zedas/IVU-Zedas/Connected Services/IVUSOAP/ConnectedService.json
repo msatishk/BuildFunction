@@ -1,22 +1,16 @@
 {
   "ExtendedData": {
     "inputs": [
-      "https://20.116.172.186:20021/intf.employee.standard.impl/PersonnelImportWebFacadeBean?wsdl"
+      "http://91.212.245.35:20000/intf.realtime.standardimport.impl/RealtimeImportWebFacadeBean?wsdl"
     ],
     "collectionTypes": [
       "System.Array",
       "System.Collections.Generic.Dictionary`2"
     ],
     "namespaceMappings": [
-      "*, IVUWS"
+      "*, IVUSOAP"
     ],
     "references": [
-      "Azure.Core, {Azure.Core, 1.25.0}",
-      "Azure.Identity, {Azure.Identity, 1.6.0}",
-      "Azure.Storage.Blobs, {Azure.Storage.Blobs, 12.13.1}",
-      "Azure.Storage.Common, {Azure.Storage.Common, 12.12.0}",
-      "Azure.Storage.Files.Shares, {Azure.Storage.Files.Shares, 12.1.0}",
-      "Azure.Storage.Queues, {Azure.Storage.Queues, 12.11.1}",
       "Microsoft.AspNetCore.Authentication.Abstractions, {Microsoft.AspNetCore.Authentication.Abstractions, 2.2.0}",
       "Microsoft.AspNetCore.Authentication.Core, {Microsoft.AspNetCore.Authentication.Core, 2.2.0}",
       "Microsoft.AspNetCore.Authorization, {Microsoft.AspNetCore.Authorization, 2.2.0}",
@@ -39,13 +33,9 @@
       "Microsoft.Azure.WebJobs, {Microsoft.Azure.WebJobs.Core, 3.0.32}",
       "Microsoft.Azure.WebJobs.Extensions, {Microsoft.Azure.WebJobs.Extensions, 3.0.6}",
       "Microsoft.Azure.WebJobs.Extensions.Http, {Microsoft.Azure.WebJobs.Extensions.Http, 3.2.0}",
-      "Microsoft.Azure.WebJobs.Extensions.Storage.Blobs, {Microsoft.Azure.WebJobs.Extensions.Storage.Blobs, 5.0.1}",
-      "Microsoft.Azure.WebJobs.Extensions.Storage.Queues, {Microsoft.Azure.WebJobs.Extensions.Storage.Queues, 5.0.1}",
       "Microsoft.Azure.WebJobs.Host, {Microsoft.Azure.WebJobs, 3.0.32}",
       "Microsoft.Azure.WebJobs.Host.Storage, {Microsoft.Azure.WebJobs.Host.Storage, 3.0.14}",
-      "Microsoft.Bcl.AsyncInterfaces, {Microsoft.Bcl.AsyncInterfaces, 1.1.1}",
       "Microsoft.DotNet.PlatformAbstractions, {Microsoft.DotNet.PlatformAbstractions, 2.1.0}",
-      "Microsoft.Extensions.Azure, {Microsoft.Extensions.Azure, 1.5.0}",
       "Microsoft.Extensions.Configuration, {Microsoft.Extensions.Configuration, 2.1.1}",
       "Microsoft.Extensions.Configuration.Abstractions, {Microsoft.Extensions.Configuration.Abstractions, 2.2.0}",
       "Microsoft.Extensions.Configuration.Binder, {Microsoft.Extensions.Configuration.Binder, 2.1.1}",
@@ -67,8 +57,6 @@
       "Microsoft.Extensions.Options, {Microsoft.Extensions.Options, 2.2.0}",
       "Microsoft.Extensions.Options.ConfigurationExtensions, {Microsoft.Extensions.Options.ConfigurationExtensions, 2.1.0}",
       "Microsoft.Extensions.Primitives, {Microsoft.Extensions.Primitives, 2.2.0}",
-      "Microsoft.Identity.Client, {Microsoft.Identity.Client, 4.39.0}",
-      "Microsoft.Identity.Client.Extensions.Msal, {Microsoft.Identity.Client.Extensions.Msal, 2.19.3}",
       "Microsoft.Net.Http.Headers, {Microsoft.Net.Http.Headers, 2.2.0}",
       "Microsoft.Win32.Primitives, {Microsoft.Win32.Primitives, 4.3.0}",
       "Microsoft.WindowsAzure.Storage, {WindowsAzure.Storage, 9.3.1}",
@@ -80,7 +68,7 @@
       "System.Collections.Concurrent, {System.Collections.Concurrent, 4.3.0}",
       "System.Console, {System.Console, 4.3.0}",
       "System.Diagnostics.Debug, {System.Diagnostics.Debug, 4.3.0}",
-      "System.Diagnostics.DiagnosticSource, {System.Diagnostics.DiagnosticSource, 4.6.0}",
+      "System.Diagnostics.DiagnosticSource, {System.Diagnostics.DiagnosticSource, 4.5.0}",
       "System.Diagnostics.Tools, {System.Diagnostics.Tools, 4.3.0}",
       "System.Diagnostics.TraceSource, {System.Diagnostics.TraceSource, 4.3.0}",
       "System.Diagnostics.Tracing, {System.Diagnostics.Tracing, 4.3.0}",
@@ -92,10 +80,9 @@
       "System.IO.Compression.ZipFile, {System.IO.Compression.ZipFile, 4.3.0}",
       "System.IO.FileSystem, {System.IO.FileSystem, 4.3.0}",
       "System.IO.FileSystem.Primitives, {System.IO.FileSystem.Primitives, 4.3.0}",
-      "System.IO.Hashing, {System.IO.Hashing, 6.0.0}",
       "System.Linq, {System.Linq, 4.3.0}",
       "System.Linq.Expressions, {System.Linq.Expressions, 4.3.0}",
-      "System.Memory.Data, {System.Memory.Data, 1.0.2}",
+      "System.Memory.Data, {System.Memory.Data, 1.0.1}",
       "System.Net.Http, {System.Net.Http, 4.3.0}",
       "System.Net.Http.Formatting, {Microsoft.AspNet.WebApi.Client, 5.2.8}",
       "System.Net.Primitives, {System.Net.Primitives, 4.3.0}",
@@ -117,12 +104,11 @@
       "System.Security.Cryptography.Algorithms, {System.Security.Cryptography.Algorithms, 4.3.0}",
       "System.Security.Cryptography.Encoding, {System.Security.Cryptography.Encoding, 4.3.0}",
       "System.Security.Cryptography.Primitives, {System.Security.Cryptography.Primitives, 4.3.0}",
-      "System.Security.Cryptography.ProtectedData, {System.Security.Cryptography.ProtectedData, 4.7.0}",
       "System.Security.Cryptography.X509Certificates, {System.Security.Cryptography.X509Certificates, 4.3.0}",
       "System.Text.Encoding, {System.Text.Encoding, 4.3.0}",
       "System.Text.Encoding.Extensions, {System.Text.Encoding.Extensions, 4.3.0}",
-      "System.Text.Encodings.Web, {System.Text.Encodings.Web, 4.7.2}",
-      "System.Text.Json, {System.Text.Json, 4.7.2}",
+      "System.Text.Encodings.Web, {System.Text.Encodings.Web, 4.5.0}",
+      "System.Text.Json, {System.Text.Json, 4.6.0}",
       "System.Text.RegularExpressions, {System.Text.RegularExpressions, 4.3.0}",
       "System.Threading, {System.Threading, 4.3.0}",
       "System.Threading.Tasks, {System.Threading.Tasks, 4.3.0}",

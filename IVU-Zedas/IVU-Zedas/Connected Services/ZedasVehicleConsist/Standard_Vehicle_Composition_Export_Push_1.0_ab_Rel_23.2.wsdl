@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="wsdl-viewer.xsl"?>
+
+<definitions name="IntfJobsWebService"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:response="http://www.ivu.de/integration/vehicle/vehiclegroup/standard"
+             xmlns:tns="http://intf.mb.ivu.de/"
+             targetNamespace="http://intf.mb.ivu.de/">
+
+   <!-- ************************** Types ************************** -->
+
+   <types>
+      <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.ivu.de/integration/vehicle/vehiclegroup/standard" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.ivu.de/integration/vehicle/vehiclegroup/standard">
+    <xs:element name="vehicleGroupExport" type="response:VehicleGroupExport"/>
+    <xs:complexType name="VehicleGroupExport">
+        <xs:sequence>
+            <xs:element name="vehicleGroups" type="response:VehicleGroups"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="VehicleGroups">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="vehicleGroup" type="response:VehicleGroup"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="VehicleGroup">
+        <xs:sequence>
+            <xs:element name="vehicleGroupKey" type="response:VehicleGroupKey"/>
+            <xs:element name="vehicleGroupType" type="xs:string"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="vehicleGroupPart" type="response:VehicleGroupPart"/>
+            <xs:element minOccurs="0" name="validFrom" type="xs:string"/>
+            <xs:element name="exists" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="VehicleGroupKey">
+        <xs:sequence>
+            <xs:element name="abbreviation" type="xs:string"/>
+            <xs:element minOccurs="0" name="description" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="VehicleGroupPart">
+        <xs:sequence>
+            <xs:element name="vehicleKey" type="response:VehicleKey"/>
+            <xs:element name="position" type="xs:integer"/>
+            <xs:element name="orientation" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="VehicleKey">
+        <xs:sequence>
+            <xs:element name="number" type="xs:string"/>
+            <xs:element minOccurs="0" name="externalNumber" type="xs:string"/>
+            <xs:element name="divisionAbbreviation" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+   </types>
+
+   <!-- ************************* Messages ************************ -->
+
+   <message name="Response">
+      <part name="response" element="response:vehicleGroupExport"/>
+   </message>
+
+   <!-- ************************* PortType ************************ -->
+
+   <portType name="IntfJobsPushPortType">
+      <operation name="sendIntfJobsExport">
+         <input message="tns:Response"/>
+      </operation>
+   </portType>
+
+   <!-- ************************* Binding ************************* -->
+
+   <binding name="IntfJobsPushBinding" type="tns:IntfJobsPushPortType">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <operation name="sendIntfJobsExport">
+         <soap:operation soapAction="http://www.ivu.de/intf.jobs.impl/IntfJobsPushWebService/IntfJobsSendExport"/>
+         <input>
+            <soap:body use="literal"/>
+         </input>
+      </operation>
+   </binding>
+
+   <!-- ************************* Service ************************* -->
+
+   <service name="IntfJobsPushWebService">
+      <port name="IntfJobsPushWebServicePort" binding="tns:IntfJobsPushBinding">
+         <soap:address location="http://localhost:8080/intf.jobs.impl/IntfJobsPushWebFacadeBean?wsdl"/>
+      </port>
+   </service>
+
+</definitions>
