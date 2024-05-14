@@ -28,6 +28,17 @@ jobs:
     - name: Build
       run:  dotnet build --configuration Release --property:OutputPath=./IVU-Zedas/output --property:WarningLevel=0
       working-directory: "./IVU-Zedas"
+      
+    - name: List files in the repository
+      working-directory: IVU-Zedas/IVU-Zedas
+      run: |
+          dir
+          
+    - name: List files in the repository
+      working-directory: IVU-Zedas
+      run: |
+          dir
+          
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
